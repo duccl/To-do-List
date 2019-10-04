@@ -9,19 +9,19 @@ import Task from './components/Task';
 
 
 const navNames = nomesNavBar
-const tasksNames = tasksList
+const tasks = tasksList
 
 
 class App extends Component{
 
   state = {
     navNames:nomesNavBar,
-    tasksNames:tasksList
+    tasksNames:[]
   }
 
-
-  changeState(newList){
-    this.setState({tasksNames:newList})
+  myCallback = (dadoFilho) => {
+    this.state.tasksNames.push(dadoFilho)
+    this.setState({tasksNames:this.state.tasksNames})
   }
 
   render(){
@@ -32,7 +32,7 @@ class App extends Component{
           <MinhaDiv class="jumbotron" tasks={this.state.tasksNames}>
             <h1 class="display-4">Add a to do</h1>
             <hr class="my-4"/>
-            <Input function={this.changeState.bind(this)} lista={this.state.tasksNames}/>
+            <Input function={this.changeState} lista={this.state.tasksNames} callbackFromParent={this.myCallback}/>
           </MinhaDiv>
           <MinhaDiv class="jumbotron">
             <h1 class="display-4">List of To Do's</h1>

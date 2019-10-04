@@ -5,7 +5,6 @@ export default class Task extends Component{
     
     constructor(props){
         super(props)
-        alert(props.tasks)
         this.state = {
             tasks:props.tasks
         }
