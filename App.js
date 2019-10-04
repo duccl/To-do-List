@@ -4,19 +4,15 @@ import MinhaDiv from './components/MinhaDiv';
 import './App.css';
 import Input from './components/Input';
 import nomesNavBar from './components/nomesNavBar';
-import tasksList from './components/tasksList';
 import Task from './components/Task';
 
-
-const navNames = nomesNavBar
-const tasks = tasksList
-
+const tasks = []
 
 class App extends Component{
 
   state = {
     navNames:nomesNavBar,
-    tasksNames:[]
+    tasksNames:tasks
   }
 
   myCallback = (dadoFilho) => {
